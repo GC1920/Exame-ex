@@ -1,0 +1,19 @@
+<% if (taskDelete != null) { %>
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmação</h5>
+                <a href="/" class="btn-close"></a>
+            </div>
+            <div class="modal-body">
+                <p>Deseja apagar a tarefa "<%= taskDelete.task %>"?</p>
+            </div>
+            <div class="modal-footer">
+                <a href="/" class="btn btn-secondary">Não</a>
+                <a href="/deleteOne/<%= taskDelete._id %>" class="btn btn-primary">Sim</a>
+            </div>
+            </div>
+        </div>
+
+<% } %> 
