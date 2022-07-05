@@ -89,6 +89,29 @@ const deleteTask = async (req, res) => {
     }
 };
 
+const taskCheck = async (req, res) => {
+
+    try {
+
+        const task = await Task.findOne({ _id: req.params.id });
+
+        if (task.check) {
+            
+            task.check = false
+
+        } else {
+
+            task.check = true
+            
+        }
+
+    } catch (err) {
+
+        res.status(500).send({error: err.message});
+
+    }
+};
+
 
 module.exports = {
     getAll,
@@ -96,4 +119,5 @@ module.exports = {
     getById,
     updateTask,
     deleteTask,
+    taskCheck,
 };

@@ -2,7 +2,12 @@
     <ul class="list-group my-5">
         <% tasksList.forEach((task) => { %> 
             <li class="list-group-item">
-                <p style="margin-bottom: -28px;"><%= task.task %></p>
+                <div style="margin-bottom: -24px;" class="form-check">
+                    <input class="form-<%= task.check %> -input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        <%= task.task %>
+                    </label>
+                </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <a href="/getById/<%= task._id %>/update" class="a-task btn btn-primary btn-sm me-md-2">Editar</a>
                     <a href="/getById/<%= task._id %>/delete" class="a-task btn btn-danger btn-sm me-md-2">Excluir</a>
